@@ -104,12 +104,26 @@ class App extends Component {
     this.state = {
       samples: sampleBank,
       displayText: " ",
+      volume: 0.3,
     };
     this.displayClipName = this.displayClipName.bind(this);
+    this.adjustVolume = this.adjustVolume.bind(this);
   }
   displayClipName(name) {
     this.setState({
       display: name,
+    });
+  }
+  adjustVolume(e) {
+    this.setState({
+      volume: e.target.value,
+      display: `Vol: ${Math.round(e.target.value * 100)}`,
+    });
+    setTimeout(() => this.clearDisplay(), 1000);
+  }
+  clearDisplay() {
+    this.setState({
+      display: " ",
     });
   }
   componentDidMount() {
@@ -119,6 +133,17 @@ class App extends Component {
     return (
       <div id="drum-machine">
         <Display display={this.state.display} />
+        <div className="volume-slider">
+          <input
+            className="volume-slider"
+            max="1"
+            min="0"
+            onChange={this.adjustVolume}
+            step="0.01"
+            type="range"
+            value={this.state.volume}
+          />
+        </div>
         <PadBank
           samples={this.state.samples}
           updateDisplay={this.displayClipName}
@@ -164,10 +189,11 @@ class DrumPad extends React.Component {
     }
   }
   activatePad() {
-    if (this.state.padStyle.backgroundColor === "#ff4") {
-      this.setState({ padStyle: activeStyle });
-    } else {
+    console.log(this.state.padStyle);
+    if (this.state.padStyle.backgroundColor === "#ffd") {
       this.setState({ padStyle: inactiveStyle });
+    } else {
+      this.setState({ padStyle: activeStyle });
     }
   }
   playSound() {

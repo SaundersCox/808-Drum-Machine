@@ -41,6 +41,8 @@ body {
   float: left;
   width: $padWidth;
   height: $padHeight;
+  line-height: $padHeight;
+  text-align: center;
   border: 2px solid #777;
   border-width: 2px;
   border-radius: 5px;
@@ -48,7 +50,6 @@ body {
   display: inline-block;
   box-sizing: border-box;
   cursor: pointer;
-  padding: 5px;
 }
 
 .pad-bank {
@@ -72,7 +73,11 @@ body {
   border: dashed 2px #eaa;
   color: #222;
   text-align: center;
+  margin: auto;
+  height: 50px;
+  line-height: 50px;
 }
 
-body {
+input[type="range"] {
+  width: 100%;
 }
