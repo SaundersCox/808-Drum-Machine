@@ -1,0 +1,78 @@
+$padWidth: 100px;
+$padHeight: 69px;
+@import url("https://fonts.googleapis.com/css2?family=KoHo:wght@500&display=swap");
+
+body {
+  font-family: "KoHo", sans-serif;
+  color: #1d2d3d;
+  background-color: #1d1d1d;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.inner-container {
+  outline: 1px solid #222222;
+  position: relative;
+  width: 700px;
+  text-align: center;
+  background-color: #232323;
+  .pad-bank {
+    width: $padWidth * 3 + 32;
+    height: $padHeight * 3 + 32;
+    display: inline-block;
+    margin: 20px;
+    .drum-pad {
+      position: relative;
+      float: left;
+      width: $padWidth;
+      height: $padHeight;
+    }
+  }
+}
+
+.drum-pad {
+  background-color: #dab;
+  position: relative;
+  float: left;
+  width: $padWidth;
+  height: $padHeight;
+  border: 2px solid #777;
+  border-width: 2px;
+  border-radius: 5px;
+  margin: 2px;
+  display: inline-block;
+  box-sizing: border-box;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.pad-bank {
+  background-color: #645;
+  position: relative;
+  float: left;
+  width: $padWidth * 3 + 35;
+  height: $padHeight * 3 + 35;
+  border: 2px solid #777;
+  border-width: 4px;
+  border-radius: 10px;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+#display {
+  position: relative;
+  background-color: #fdd;
+  border-radius: 5px;
+  border: dashed 2px #eaa;
+  color: #222;
+  text-align: center;
+}
+
+body {
+}
