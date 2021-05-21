@@ -38,7 +38,6 @@ body {
 .drum-pad {
   background-color: #dab;
   position: relative;
-  float: left;
   width: $padWidth;
   height: $padHeight;
   line-height: $padHeight;
@@ -55,7 +54,6 @@ body {
 .pad-bank {
   background-color: #645;
   position: relative;
-  float: left;
   width: $padWidth * 3 + 35;
   height: $padHeight * 3 + 35;
   border: 2px solid #777;

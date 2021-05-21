@@ -130,6 +130,10 @@ class App extends Component {
     this.displayClipName("808 Drum Machine");
   }
   render() {
+    const clips = [].slice.call(document.getElementsByClassName("clip"));
+    clips.forEach((sound) => {
+      sound.volume = this.state.volume;
+    });
     return (
       <div id="drum-machine">
         <Display display={this.state.display} />
@@ -189,7 +193,6 @@ class DrumPad extends React.Component {
     }
   }
   activatePad() {
-    console.log(this.state.padStyle);
     if (this.state.padStyle.backgroundColor === "#ffd") {
       this.setState({ padStyle: inactiveStyle });
     } else {
